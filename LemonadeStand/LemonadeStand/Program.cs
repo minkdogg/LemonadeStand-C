@@ -12,6 +12,9 @@ namespace LemonadeStand
         {
             string userName;
             string standLocation;
+            string price;
+            string quantityCups;
+            bool gameCheck = true;
 
             Console.WriteLine("Welcome to the curb kid.");
             Console.WriteLine("You'll have to be tough to make it in this business");
@@ -33,6 +36,38 @@ namespace LemonadeStand
             standLocation = Console.ReadLine();
 
             Player player = new Player(userName, standLocation);
+            Console.ReadLine();
+
+            //Create initial suppliers and prices for inventory list
+            var customerNum = new Random();
+            List<Supplier> supplierList = new List<Supplier> { };
+
+            int rInt = customerNum.Next(0, 10);
+            for (int i = 0; i < rInt; i ++ )
+            {
+                Supplier supplier = new Supplier();
+                supplierList.Add(supplier);
+                Console.WriteLine(supplier.name);
+            }
+                Console.ReadLine();
+            
+            //Day Generation
+            while(gameCheck == true)
+            {
+                Console.WriteLine("What price would you like to sell your lemonade?");
+                price = Console.ReadLine();
+                Console.WriteLine("How many cups of lemonade would you like to sell?");
+                quantityCups = Console.ReadLine();
+
+                gameCheck = player.stand.checkifZero();
+
+
+
+            }
+            
+            
+            
+
         }
     }
 }

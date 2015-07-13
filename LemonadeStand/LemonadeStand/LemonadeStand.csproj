@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cups.cs" />
+    <Compile Include="CupsOrder.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="CustomerFactory.cs" />
     <Compile Include="Ice.cs" />
@@ -50,13 +51,16 @@
     <Compile Include="Inventory.cs" />
     <Compile Include="IUpdate.cs" />
     <Compile Include="Lemon.cs" />
+    <Compile Include="LemonOrder.cs" />
     <Compile Include="NameGenerator.cs" />
+    <Compile Include="Order.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shipment.cs" />
     <Compile Include="Stand.cs" />
     <Compile Include="Sugar.cs" />
+    <Compile Include="SugarOrder.cs" />
     <Compile Include="Supplier.cs" />
     <Compile Include="Weather.cs" />
   </ItemGroup>

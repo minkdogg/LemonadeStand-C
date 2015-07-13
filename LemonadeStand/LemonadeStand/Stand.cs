@@ -21,6 +21,29 @@ namespace LemonadeStand
 
         }
 
+        public float getCash()
+        {
+            return cash;
+        }
+
+        public void setCash(float newCash)
+        {
+            cash = cash + newCash;
+        }
+
+        public bool checkifZero()
+        {
+            if (cash <= 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
           public Stand (string standLocation)
         {
             this.cash = 500;
