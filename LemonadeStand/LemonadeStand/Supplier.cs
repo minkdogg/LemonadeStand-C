@@ -36,29 +36,32 @@ namespace LemonadeStand
             this.name = nameGenerator.GenRandomLastName();
             
             //
-            // Generate Random Inventory
+            // Generate Random Starting Inventory
             //
+            int minStartingQuantity = 5;
+            int maxStartingQuantity = 15;
             Random random = new Random();
             // Lemons
-            int generateQuantity = random.Next(0,15);
+            int generateQuantity = random.Next(minStartingQuantity, maxStartingQuantity);
             for (int i = 0; i < generateQuantity; i++)
             {
+
                 lemonInventory.add(new Lemon());
             }
             // Sugar
-            generateQuantity = random.Next(0,15);
+            generateQuantity = random.Next(minStartingQuantity, maxStartingQuantity);
             for (int i = 0; i < generateQuantity; i++)
             {
                 sugarInventory.add(new Sugar());
             }
             // Ice
-            generateQuantity = random.Next(0,15);
+            generateQuantity = random.Next(minStartingQuantity, maxStartingQuantity);
             for (int i = 0; i < generateQuantity; i++)
             {
                 iceInventory.add(new Ice());
             }
             // Cups
-            generateQuantity = random.Next(0,15);
+            generateQuantity = random.Next(minStartingQuantity, maxStartingQuantity);
             for (int i = 0; i < generateQuantity; i++)
             {
                 cupInventory.add(new Cups());
@@ -67,47 +70,35 @@ namespace LemonadeStand
 
             // Generate Random Price List ??
             // STUB Hard Code STUB
-            this.lemonSalePrice = 1;
-            this.sugarSalePrice = 1;
-            this.iceSalePrice = 1;
-            this.cupSalePrice = 1;
-
-
+            int stubbedPrice = 1;
+            this.lemonSalePrice = stubbedPrice;
+            this.sugarSalePrice = stubbedPrice;
+            this.iceSalePrice = stubbedPrice;
+            this.cupSalePrice = stubbedPrice;
 
             // Generate Random Cash on Hand
-            this.cashOnHand = random.Next(600, 1400);
-
-
+            int minStartingCash = 600;
+            int maxStartingCash = 1400;
+            this.cashOnHand = random.Next(minStartingCash, maxStartingCash);
         }
 
 
         
-        
+        //
+        // ACCESSORS
+        //
         public GeoCoordinate Location
         {
-            get
-            {
-                return this.location;
-            }
-            set
-            {
-                this.location = value;
-            }
+            get {return this.location;}
+            set {this.location = value;}
         }
 
         public string Name
         {
             get 
-            {
-                return this.name;
-            }
+            {return this.name;}
         }
 
-
-        public void recieveShipment(Shipment shipment)
-        {
-
-        }
 
 
         //
