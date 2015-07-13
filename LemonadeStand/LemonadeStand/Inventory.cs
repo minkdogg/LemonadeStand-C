@@ -8,19 +8,20 @@ namespace LemonadeStand
 {
     public abstract class Inventory : IUpdate
     {
-        List<Ingredient> ingredientList;
+        protected List<Ingredient> ingredientList;
 
         public void update()
         {
-            for (int i = 0; i < ingredientList.Count; i++)
+            for (int i = 0; i < this.ingredientList.Count; i++)
             {
-                ingredientList[i].daysExpire -= 1;
+                this.ingredientList[i].daysExpire -= 1;
             }
         }
 
-          public Inventory(List<Ingredient> ingredients)
+        public Inventory(List<Ingredient> ingredients)
         {
             this.ingredientList = ingredients;
+
             
         }
 
@@ -41,7 +42,7 @@ namespace LemonadeStand
         {
             for (int i = 0; i < ingredients.Count; i++)
             {
-                ingredientList.Add(ingredients[i]);
+                this.ingredientList.Add(ingredients[i]);
             }
 
         }
