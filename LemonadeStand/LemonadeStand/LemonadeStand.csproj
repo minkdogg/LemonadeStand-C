@@ -41,12 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cups.cs" />
+    <Compile Include="Ice.cs" />
     <Compile Include="Ingredient.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="IUpdate.cs" />
+    <Compile Include="Lemon.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shipment.cs" />
+    <Compile Include="Sugar.cs" />
     <Compile Include="Supplier.cs" />
   </ItemGroup>
   <ItemGroup>
