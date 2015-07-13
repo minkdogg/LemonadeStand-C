@@ -16,8 +16,33 @@ namespace LemonadeStand
         protected float cashOnHand;
         protected GeoCoordinate location;
 
+        protected float lemonSalePrice;
+        protected float sugarSalePrice;
+        protected float iceSalePrice;
+        protected float cupSalePrice;
 
-        
+        protected int lemonsSoldToday;
+        protected int sugarSoldToday;
+        protected int iceSoldToday;
+        protected int cupSoldToday;
+
+        protected string name;
+
+
+        public Supplier()
+        {
+            // Generate Random Name
+            NameGenerator nameGenerator = new NameGenerator();
+            this.name = nameGenerator.GenRandomLastName();
+
+            // Generate Random Inventory
+
+            // Generate Random Price List
+
+            // Generate Random Cash on Hand
+
+
+        }
 
 
         
@@ -33,6 +58,15 @@ namespace LemonadeStand
                 this.location = value;
             }
         }
+
+        public string Name
+        {
+            get 
+            {
+                return this.name;
+            }
+        }
+
 
         public void recieveShipment(Shipment shipment)
         {
@@ -83,13 +117,28 @@ namespace LemonadeStand
 
 
 
-
+        //
+        // UPDATE METHODS - UPDATE PURCHASES, PRICES, SPOILAGE
+        //
         public void update()
         {
+            // Update Spoilage of inventory
             this.lemonInventory.update();
             this.sugarInventory.update();
             this.iceInventory.update();
             this.cupInventory.update();
+
+            // Purchase new goods based off the day's sales.
+            // How to figure out how much they are going to buy?
+            
+
+
+            // Update Prices based off the day's sales.
+            // How to figure out when to buy/sell more?
+            // this.lemonSalePrice += (this.lemonsSoldToday - lemons Bought today) // ??
+
+
+
 
             this.cashOnHand = this.calculateOperatingCost();
         }
@@ -101,6 +150,11 @@ namespace LemonadeStand
             return 50;
         }
 
+
+        protected float getCashOnHand()
+        {
+            return this.cashOnHand;
+        }
 
     }
 }
