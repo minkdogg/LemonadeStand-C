@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    public class Shipment
+    public class Shipment : IUpdate
     {
         protected List<object> lemonList = new List<object>();
         protected List<object> sugarList = new List<object>();
