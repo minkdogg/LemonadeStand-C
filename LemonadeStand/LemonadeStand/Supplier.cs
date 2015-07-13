@@ -86,13 +86,20 @@ namespace LemonadeStand
 
         public override void update()
         {
-            inventory.update();
+            this.lemonInventory.update();
+            this.sugarInventory.update();
+            this.iceInventory.update();
+            this.cupInventory.update();
 
             this.cashOnHand = this.calculateOperatingCost();
         }
 
 
-        protected float calculateOperatingCost();
+        protected float calculateOperatingCost()
+        {
+            // DEBUG - HARD CODE STUB - This will become a calculation based upon what is bought today.
+            return 50;
+        }
 
 
     }

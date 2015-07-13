@@ -10,7 +10,7 @@ namespace LemonadeStand
     {
         List<Ingredient> ingredientList;
 
-        public void update(List<Ingredient> ingredientList )
+        public void update()
         {
             for (int i = 0; i < ingredientList.Count; i++)
             {
