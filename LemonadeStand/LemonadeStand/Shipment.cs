@@ -8,15 +8,49 @@ namespace LemonadeStand
 {
     public class Shipment
     {
-        protected Inventory inventory;
+        protected List<object> lemonList = new List<object>();
+        protected List<object> sugarList = new List<object>();
+        protected List<object> iceList = new List<object>();
+        protected List<object> cupList = new List<object>();
+
+        protected int daysToDelivery;
+
         protected bool shipmentDelayed = false;
         protected bool shipmentLost = false;
-        /*
-        public Shipment(Inventory inventory)
-        {
 
+        public void AddLemons(object lemon)
+        {
+            this.lemonList.Add(lemon);
         }
 
+        public void AddSugar(object sugar)
+        {
+            this.sugarList.Add(sugar);
+        }
+
+        public void AddIce(object ice)
+        {
+            this.iceList.Add(ice);
+        }
+
+        public void AddCup(object cup)
+        {
+            this.cupList.Add(cup);
+        }
+
+        public int DaysToDelivery
+        {
+            get
+            {
+                return daysToDelivery;
+            }
+            set
+            {
+                this.daysToDelivery = value;
+            }
+        }
+
+        /*
         public int shipmentDelay(Inventory inventory, int daysDelayed)
         {
             protected int newLife = inventory.getLife - daysDelayed;
