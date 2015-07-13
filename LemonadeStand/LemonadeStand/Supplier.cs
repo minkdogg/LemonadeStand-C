@@ -81,11 +81,13 @@ namespace LemonadeStand
 
             // Generate Random Price List ??
             // STUB Hard Code STUB
-            int stubbedPrice = 1;
-            this.lemonSalePrice = stubbedPrice;
-            this.sugarSalePrice = stubbedPrice;
-            this.iceSalePrice = stubbedPrice;
-            this.cupSalePrice = stubbedPrice;
+            int basePrice = 1;
+            int minVariance = 10;
+            int maxVariance = 100;
+            this.lemonSalePrice = basePrice + (random.Next(minVariance, maxVariance)/100);
+            this.sugarSalePrice = basePrice + (random.Next(minVariance, maxVariance)/100);
+            this.iceSalePrice = basePrice + (random.Next(minVariance, maxVariance)/100);
+            this.cupSalePrice = basePrice + (random.Next(minVariance, maxVariance)/100);
 
             // Generate Random Cash on Hand
             int minStartingCash = 600;
