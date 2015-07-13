@@ -9,5 +9,10 @@ namespace LemonadeStand
     public class Sugar : Ingredient
     {
         protected bool spoiled = false;
+
+        public Sugar():base()
+        {
+            this.daysExpire = 14; // 14 days to expire as defined by the problem definition
+        }
     }
 }
