@@ -9,10 +9,10 @@ namespace LemonadeStand
 {
     public class Supplier : IUpdate 
     {
-        protected Inventory lemonInventory;
-        protected Inventory sugarInventory;
-        protected Inventory iceInventory;
-        protected Inventory cupInventory;
+        protected Inventory lemonInventory = new Inventory();
+        protected Inventory sugarInventory = new Inventory();
+        protected Inventory iceInventory = new Inventory();
+        protected Inventory cupInventory = new Inventory();
         protected float cashOnHand;
         protected GeoCoordinate location;
 
@@ -42,6 +42,7 @@ namespace LemonadeStand
             int maxStartingQuantity = 15;
             Random random = new Random();
             // Lemons
+
             int generateQuantity = random.Next(minStartingQuantity, maxStartingQuantity);
             for (int i = 0; i < generateQuantity; i++)
             {
@@ -52,19 +53,29 @@ namespace LemonadeStand
             generateQuantity = random.Next(minStartingQuantity, maxStartingQuantity);
             for (int i = 0; i < generateQuantity; i++)
             {
-                sugarInventory.add(new Sugar());
+                Ingredient lemon = new Lemon();
+                this.lemonInventory.add(lemon);
+            }
+            // Sugar
+            generateQuantity = random.Next(1,15);
+            for (int i = 0; i < generateQuantity; i++)
+            {
+                Ingredient sugar = new Sugar();
+                sugarInventory.add(sugar);
             }
             // Ice
             generateQuantity = random.Next(minStartingQuantity, maxStartingQuantity);
             for (int i = 0; i < generateQuantity; i++)
             {
-                iceInventory.add(new Ice());
+                Ingredient ice = new Ice();
+                iceInventory.add(ice);
             }
             // Cups
             generateQuantity = random.Next(minStartingQuantity, maxStartingQuantity);
             for (int i = 0; i < generateQuantity; i++)
             {
-                cupInventory.add(new Cups());
+                Ingredient cups = new Cups();
+                cupInventory.add(cups);
             }
 
 

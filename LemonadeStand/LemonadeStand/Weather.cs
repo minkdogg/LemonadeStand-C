@@ -4,13 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace LemonadeStand
 {
     public class Weather
     {
-        protected int temperature;
+        protected double temperature;
         protected string precipitation;
-        protected decimal demandLevel;
+        protected double demandLevel;
+        protected double sunnyFactor = 1.2;
+        protected double rainyFactor = .8;
 
         public Weather()
         {
@@ -35,19 +38,20 @@ namespace LemonadeStand
             /*DEMAND GENERATOR*/
             if (this.precipitation == "Sunny")
             {
-                this.demandLevel = Decimal.ToDecimal(temperature) * 1.2;
+                this.demandLevel = temperature * sunnyFactor;
+                
             }
             else if (this.precipitation == "Cloudy")
             {
-                this.demandLevel = Decimal.ToDecimal(this.temperature);
+                this.demandLevel = temperature;
             }
             else
             {
-                this.demandLevel = Decimal.ToDecimal(temperature) * 0.8;
+                this.demandLevel = temperature * rainyFactor;
             }
         }
 
-        public int Temperature
+        public double Temperature
         {
             get
             {
@@ -63,7 +67,7 @@ namespace LemonadeStand
             }
         }
 
-        public decimal DemandLevel
+        public double DemandLevel
         {
             get
             {

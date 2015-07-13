@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    public abstract class Inventory : IUpdate
+    public class Inventory : IUpdate
     {
         protected List<Ingredient> ingredientList;
 
@@ -18,9 +18,9 @@ namespace LemonadeStand
             }
         }
 
-        public Inventory(List<Ingredient> ingredients)
+        public Inventory()
         {
-            this.ingredientList = ingredients;
+            this.ingredientList = new List<Ingredient> { };
 
             
         }

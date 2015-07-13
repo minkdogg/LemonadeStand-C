@@ -42,12 +42,12 @@ namespace LemonadeStand
             var customerNum = new Random();
             List<Supplier> supplierList = new List<Supplier> { };
 
-            int rInt = customerNum.Next(0, 10);
+            int rInt = customerNum.Next(0, 5);
             for (int i = 0; i < rInt; i ++ )
             {
                 Supplier supplier = new Supplier();
                 supplierList.Add(supplier);
-                Console.WriteLine(supplier.name);
+                Console.WriteLine(supplier.Name);
             }
                 Console.ReadLine();
             
@@ -58,6 +58,9 @@ namespace LemonadeStand
                 price = Console.ReadLine();
                 Console.WriteLine("How many cups of lemonade would you like to sell?");
                 quantityCups = Console.ReadLine();
+                Weather weather = new Weather();
+                Console.WriteLine("The temperature outside is " + weather.Temperature);
+                Console.ReadLine();
 
                 gameCheck = player.stand.checkifZero();
 
