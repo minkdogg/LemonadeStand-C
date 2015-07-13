@@ -40,6 +40,7 @@ namespace LemonadeStand
             //
             int minStartingQuantity = 5;
             int maxStartingQuantity = 15;
+            System.Threading.Thread.Sleep(100);
             Random random = new Random();
             // Lemons
 
@@ -188,8 +189,8 @@ namespace LemonadeStand
             // Update Spoilage of inventory
             this.lemonInventory.update();
             this.sugarInventory.update();
-            this.iceInventory.update();
-            this.cupInventory.update();
+            // this.iceInventory.update(); // Ice has a variable spoilage that is not programmed in yet
+            // this.cupInventory.update(); // Cups do not spoil
             
 
             //
