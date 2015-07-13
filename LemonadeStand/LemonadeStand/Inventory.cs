@@ -8,6 +8,12 @@ namespace LemonadeStand
 {
     public abstract class Inventory
     {
-       
+        List<object> ingredientList;
+
+          public Inventory(List<object> ingredients)
+        {
+            this.ingredientList = ingredients;
+        }
+
     }
 }
