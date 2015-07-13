@@ -8,6 +8,6 @@ namespace LemonadeStand
 {
     interface IUpdate
     {
-        public void update();
+        void update();
     }
 }

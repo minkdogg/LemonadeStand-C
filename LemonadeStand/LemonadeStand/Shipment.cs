@@ -11,8 +11,8 @@ namespace LemonadeStand
         protected Inventory inventory;
         protected bool shipmentDelayed = false;
         protected bool shipmentLost = false;
-
-        public Shipments(Inventory inventory)
+        /*
+        public Shipment(Inventory inventory)
         {
 
         }
@@ -28,5 +28,6 @@ namespace LemonadeStand
         {
             inventory.setLife(0);
         }
+        */
     }
 }

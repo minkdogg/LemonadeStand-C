@@ -84,7 +84,7 @@ namespace LemonadeStand
 
 
 
-        public override void update()
+        public void update()
         {
             this.lemonInventory.update();
             this.sugarInventory.update();

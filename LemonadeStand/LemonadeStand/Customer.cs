@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Customer : IUpdate
+    public class Customer : IUpdate
     {
         public int buyChance;
         public bool buy = true;
@@ -16,6 +16,11 @@ namespace LemonadeStand
             {
                 return buyChance;
             }
+        }
+
+        public void update()
+        {
+
         }
     }
 }

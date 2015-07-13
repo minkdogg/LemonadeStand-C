@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Ingredient
+    public class Ingredient
     {
         public int daysExpire;
 

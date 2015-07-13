@@ -33,8 +33,6 @@ namespace LemonadeStand
             standLocation = Console.ReadLine();
 
             Player player = new Player(userName, standLocation);
-
-
         }
     }
 }
