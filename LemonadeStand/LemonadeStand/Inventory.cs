@@ -24,17 +24,27 @@ namespace LemonadeStand
             
         }
 
-          public List<Ingredient> getIngredients()
-          {
-              return this.ingredientList;
-          }
+        public List<Ingredient> getIngredients()
+        {
+            return this.ingredientList;
+        }
 
 
 
-          public void setInventory(List<Ingredient> ingredients)
-          {
-              this.ingredientList = ingredients;
-          }
+        public void setInventory(List<Ingredient> ingredients)
+        {
+            this.ingredientList = ingredients;
+        }
+
+
+        public void add(List<Ingredient> ingredients)
+        {
+            for (int i = 0; i < ingredients.Count; i++)
+            {
+                ingredientList.Add(ingredients[i]);
+            }
+
+        }
 
 
 
