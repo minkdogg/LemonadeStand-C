@@ -8,5 +8,19 @@ namespace LemonadeStand
 {
     class Ingredient
     {
+        public int daysExpire;
+
+        public int DaysExpire
+        {
+            get
+            { 
+                return daysExpire; 
+            }
+
+            set 
+            {
+                daysExpire = value;
+            }
+        }
     }
 }
