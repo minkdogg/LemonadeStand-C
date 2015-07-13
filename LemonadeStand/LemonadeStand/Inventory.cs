@@ -24,7 +24,7 @@ namespace LemonadeStand
             
         }
 
-        public List<Ingredient> getIngredients()
+        public List<Ingredient> getInventory()
         {
             return this.ingredientList;
         }
