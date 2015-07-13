@@ -11,13 +11,13 @@ namespace LemonadeStand
         protected string playerName;
         protected int hiScore;
 
-        public Player(string name)
+        public Player(string name, string location)
         {
-            Stand name = new Stand();
+            Stand stand = new Stand(location);
             this.playerName = name;
         }
 
-        public int PlayerName
+        public string PlayerName
         {
             get
             {

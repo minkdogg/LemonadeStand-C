@@ -7,7 +7,7 @@ using System.Device.Location;
 
 namespace LemonadeStand
 {
-    class Stand : IUpdate
+    public class Stand : IUpdate
     {
            
         public float cash;

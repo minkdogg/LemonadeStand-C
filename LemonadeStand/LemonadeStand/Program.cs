@@ -11,6 +11,7 @@ namespace LemonadeStand
         static void Main(string[] args)
         {
             string userName;
+            string standLocation;
 
             Console.WriteLine("Welcome to the curb kid.");
             Console.WriteLine("You'll have to be tough to make it in this business");
@@ -27,8 +28,13 @@ namespace LemonadeStand
             Console.WriteLine("... so if you think you're ready to make some cold hard lemonade cash enter your name, and let's get started:");
             
             userName = Console.ReadLine();
+            
+            Console.WriteLine("Where are you going to set up your stand?");
+            standLocation = Console.ReadLine();
 
-            Player player = new Player(userName);
+            Player player = new Player(userName, standLocation);
+
+
         }
     }
 }
