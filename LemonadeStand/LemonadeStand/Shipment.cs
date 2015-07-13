@@ -23,5 +23,10 @@ namespace LemonadeStand
 
             inventory.setLife(newLife);
         }
+
+        public int shipmentLost(Inventory inventory)
+        {
+            inventory.setLife(0);
+        }
     }
 }
