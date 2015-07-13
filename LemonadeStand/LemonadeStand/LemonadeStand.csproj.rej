@@ -1,0 +1,9 @@
+diff a/LemonadeStand/LemonadeStand/LemonadeStand.csproj b/LemonadeStand/LemonadeStand/LemonadeStand.csproj	(rejected hunks)
+@@ -50,7 +50,6 @@
+     <Compile Include="Inventory.cs" />
+     <Compile Include="IUpdate.cs" />
+     <Compile Include="Lemon.cs" />
+-    <Compile Include="NameGenerator.cs" />
+     <Compile Include="Player.cs" />
+     <Compile Include="Program.cs" />
+     <Compile Include="Properties\AssemblyInfo.cs" />
