@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cups.cs" />
+    <Compile Include="Customer.cs" />
     <Compile Include="Ice.cs" />
     <Compile Include="Ingredient.cs" />
     <Compile Include="Inventory.cs" />

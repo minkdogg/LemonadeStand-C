@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Device.Location;
 
 namespace LemonadeStand
 {
-    class Stand
+    class Stand : IUpdate
     {
            
         public float cash;
@@ -15,7 +16,12 @@ namespace LemonadeStand
         public int sugar;
         public string location;
 
-          public Stand(string standLocation)
+        public void update(){
+
+
+        }
+
+          public Stand (string standLocation)
         {
             this.cash = 500;
             this.lemons = 0;
@@ -23,6 +29,10 @@ namespace LemonadeStand
             this.ice = 0;
             this.location = standLocation;
         }
+
+
+
+
 
     
 }
