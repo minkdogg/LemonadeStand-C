@@ -188,28 +188,112 @@ namespace LemonadeStand
             this.sugarInventory.update();
             this.iceInventory.update();
             this.cupInventory.update();
-
-            // Purchase new goods based off the day's sales.
-            // How to figure out how much they are going to buy?
             
 
+            //
+            // Purchase new inventory based off the day's sales
+            // 
+            int inventoryBumpForSales = 2; // For each lemon sold, but two more
+            // Lemons
+            for (int i = 0; i < lemonsSoldToday; i++)
+            {
+                for (int j = 0; j < inventoryBumpForSales; j++)
+                {
+                    Ingredient lemon = new Lemon();
+                    lemonInventory.add(lemon);
+                    cashOnHand -= lemonSalePrice/2;
 
+                }
+            }
+            // Sugar
+            for (int i = 0; i < sugarSoldToday; i++)
+            {
+                for (int j = 0; j < inventoryBumpForSales; j++)
+                {
+                    Ingredient sugar = new Sugar();
+                    sugarInventory.add(sugar);
+                    cashOnHand -= sugarSalePrice / 2;
+                }
+            }
+            // Ice
+            for (int i = 0; i < iceSoldToday; i++)
+            {
+                for (int j = 0; j < inventoryBumpForSales; j++)
+                {
+                    Ingredient ice = new Ice();
+                    iceInventory.add(ice);
+                    cashOnHand -= iceSalePrice / 2;
+                }
+            }
+            // Cup
+            for (int i = 0; i < cupSoldToday; i++)
+            {
+                for (int j = 0; j < inventoryBumpForSales; j++)
+                {
+                    Ingredient cup = new Cups();
+                    cupInventory.add(cup);
+                    cashOnHand -= cupSalePrice / 2;
+                }
+            }
+
+
+
+            //
             // Update Prices based off the day's sales.
-            // How to figure out when to buy/sell more?
-            // this.lemonSalePrice += (this.lemonsSoldToday - lemons Bought today) // ??
+            //
+            // Lemons
+            if (this.lemonsSoldToday == 0)
+            {
+                this.lemonSalePrice -= .01f;
+            }
+            else
+            {
+                this.lemonSalePrice += .01f * this.lemonsSoldToday;
+            }
+            // Sugar
+            if (this.sugarSoldToday == 0)
+            {
+                this.sugarSalePrice -= .01f;
+            }
+            else
+            {
+                this.sugarSalePrice += .01f * this.sugarSoldToday;
+            }
+            // Ice
+            if (this.iceSoldToday == 0)
+            {
+                this.iceSalePrice -= .01f;
+            }
+            else
+            {
+                this.iceSalePrice += .01f * this.iceSoldToday;
+            }
+            // Cups
+            if (this.cupSoldToday == 0)
+            {
+                this.cupSalePrice -= .01f;
+            }
+            else
+            {
+                this.cupSalePrice += .01f * this.cupSoldToday;
+            }
+
+            //
+            // Calculate Todays Fixed Operating Cost
+            //
+            float dailyHardCost = 50f;
+            this.cashOnHand -= dailyHardCost;
 
 
-
-
-            this.cashOnHand = this.calculateOperatingCost();
+            //
+            // Reset Daily Sales Count
+            //
+            this.lemonsSoldToday = 0;
+            this.sugarSoldToday = 0;
+            this.iceSoldToday = 0;
+            this.cupSoldToday = 0;
         }
 
-
-        protected float calculateOperatingCost()
-        {
-            // DEBUG - HARD CODE STUB - This will become a calculation based upon what is bought today.
-            return 50;
-        }
 
 
         public float getCashOnHand()
