@@ -6,14 +6,25 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    public abstract class Inventory
+    public abstract class Inventory : IUpdate
     {
-        List<object> ingredientList;
+        List<Ingredient> ingredientList;
 
-          public Inventory(List<object> ingredients)
+        public void update(List<Ingredient> ingredientList )
+        {
+            for (int i = 0; i < ingredientList.Count; i++)
+            {
+                ingredientList[i].daysExpire -= 1;
+            }
+        }
+
+          public Inventory(List<Ingredient> ingredients)
         {
             this.ingredientList = ingredients;
+            
         }
+
+
 
     }
 }
