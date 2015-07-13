@@ -15,6 +15,21 @@ namespace LemonadeStand
             string price;
             string quantityCups;
             bool gameCheck = true;
+            double customerFloor;
+            int customerFloorInt;
+            int customerSelling;
+            float sugarSalePrice;
+            float lemonSalePrice;
+            float iceSalePrice;
+            float cupSalePrice;
+            string supplierChoice;
+            string lemonChoice;
+            string iceChoice;
+            string sugarChoice;
+            string cupsChoice;
+            Supplier selectedSupplier = new Supplier();
+
+
 
             Console.WriteLine("Welcome to the curb kid.");
             Console.WriteLine("You'll have to be tough to make it in this business");
@@ -36,31 +51,115 @@ namespace LemonadeStand
             standLocation = Console.ReadLine();
 
             Player player = new Player(userName, standLocation);
-            Console.ReadLine();
+            
 
             //Create initial suppliers and prices for inventory list
             var customerNum = new Random();
             List<Supplier> supplierList = new List<Supplier> { };
 
-            int rInt = customerNum.Next(0, 5);
+            int rInt = customerNum.Next(2, 5);
             for (int i = 0; i < rInt; i ++ )
             {
                 Supplier supplier = new Supplier();
                 supplierList.Add(supplier);
-                Console.WriteLine(supplier.Name);
+               
             }
                 Console.ReadLine();
             
             //Day Generation
             while(gameCheck == true)
             {
+                Weather weather = new Weather();
+                var customerNumber = new Random();
+                
+                List<Customer> customerList = new List<Customer> { };
+                customerFloor = Math.Floor(weather.DemandLevel);
+                customerFloorInt = Convert.ToInt32(customerFloor);
+
+                //customer loop
+                int customerInt = customerNumber.Next(0, customerFloorInt);
+                for (int i = 0; i < customerInt; i++)
+                {
+                    Customer customer = new Customer(weather);
+                    customerList.Add(customer);
+                }
+
+                customerSelling = customerList.Count();
+
+                Console.WriteLine("The temperature outside is " + weather.Temperature);
+
+                for (int i = 0; i < rInt; i++)
+                {
+                    lemonSalePrice = supplierList[i].getLemonPrice();
+                    cupSalePrice = supplierList[i].getCupPrice();
+                    sugarSalePrice = supplierList[i].getSugarPrice();
+                    iceSalePrice = supplierList[i].getIcePrice();
+                    Console.WriteLine("Name: " + supplierList[i].Name);
+                    Console.WriteLine("Sugar Price: " + sugarSalePrice);
+                    Console.WriteLine("Lemon Price: " + lemonSalePrice);
+                    Console.WriteLine("Ice Price: " + iceSalePrice);
+                    Console.WriteLine("Cup Price: " + cupSalePrice);
+                    Console.WriteLine("");
+                    
+                }
+
+                Console.WriteLine("Which supplier would you like to buy from?");
+                supplierChoice = Console.ReadLine();
+                foreach(Supplier supplier in supplierList){
+                    if (supplier.Name == supplierChoice){
+                        selectedSupplier = supplier;
+                        break;
+                    }
+                }
+                
+
+
+                Console.WriteLine("How much sugar would you like?");
+                sugarChoice = Console.ReadLine();
+
+                if (Convert.ToInt32(sugarChoice) > 0)
+                {
+                    SugarOrder sugar = new SugarOrder(Convert.ToInt32(sugarChoice));
+                    selectedSupplier.createShipment(sugar);
+                }
+                
+
+                Console.WriteLine("How many cups would you like?");
+                cupsChoice = Console.ReadLine();
+                if (Convert.ToInt32(cupsChoice) > 0)
+                {
+                    CupsOrder cups = new CupsOrder(Convert.ToInt32(cupsChoice));
+                    selectedSupplier.createShipment(cups);
+                }
+
+                Console.WriteLine("How many lemons would you like?");
+                lemonChoice = Console.ReadLine();
+                if (Convert.ToInt32(lemonChoice) > 0)
+                {
+                    LemonOrder lemon = new LemonOrder(Convert.ToInt32(lemonChoice));
+                    selectedSupplier.createShipment(lemon);
+                }
+
+                Console.WriteLine("How much ice would you like?");
+                iceChoice = Console.ReadLine();
+                {
+                    IceOrder ice = new IceOrder(Convert.ToInt32(iceChoice));
+                    selectedSupplier.createShipment(ice);
+                }
+                Console.ReadLine();
+
+
+
+
+
+               
+                
+
+       
                 Console.WriteLine("What price would you like to sell your lemonade?");
                 price = Console.ReadLine();
-                Console.WriteLine("How many cups of lemonade would you like to sell?");
+                Console.WriteLine("How many cups of lemonade would you like to make?");
                 quantityCups = Console.ReadLine();
-                Weather weather = new Weather();
-                Console.WriteLine("The temperature outside is " + weather.Temperature);
-                Console.ReadLine();
 
                 gameCheck = player.stand.checkifZero();
 

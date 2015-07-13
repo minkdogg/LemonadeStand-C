@@ -15,6 +15,12 @@ namespace LemonadeStand
         public int ice;
         public int sugar;
         public string location;
+        public int cups;
+        public int lemonadeCups;
+        protected Inventory lemonInventory = new Inventory();
+        protected Inventory sugarInventory = new Inventory();
+        protected Inventory iceInventory = new Inventory();
+        protected Inventory cupInventory = new Inventory();
 
         public void update(){
 
@@ -24,6 +30,21 @@ namespace LemonadeStand
         public float getCash()
         {
             return cash;
+        }
+
+        public void makeLemonade(int lemonade)
+        {
+            if (lemonade > sugar || lemonade > cups || lemonade > lemons || lemonade > ice)
+            {
+                Console.WriteLine("Not enough ingredients to make lemonade");
+            }
+            else
+            {
+                lemons -= lemonade;
+                cups -= lemonade;
+                sugar -= lemonade;
+                ice -= lemonade;
+            }
         }
 
         public void setCash(float newCash)
@@ -50,6 +71,7 @@ namespace LemonadeStand
             this.lemons = 0;
             this.sugar = 0;
             this.ice = 0;
+            this.cups = 0;
             this.location = standLocation;
         }
 
