@@ -154,6 +154,29 @@ namespace LemonadeStand
         }
 
 
+        //
+        // GET PRICE METHODS
+        //
+        public float getLemonPrice()
+        {
+            return this.lemonSalePrice;
+        }
+        public float getSugarPrice()
+        {
+            return this.sugarSalePrice;
+        }
+        public float getIcePrice()
+        {
+            return this.iceSalePrice;
+        }
+        public float getCupPrice()
+        {
+            return this.cupSalePrice;
+        }
+
+
+
+
 
         //
         // UPDATE METHODS - UPDATE PURCHASES, PRICES, SPOILAGE
