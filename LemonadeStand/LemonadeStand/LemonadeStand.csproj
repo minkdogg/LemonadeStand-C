@@ -49,7 +49,6 @@
     <Compile Include="Inventory.cs" />
     <Compile Include="IUpdate.cs" />
     <Compile Include="Lemon.cs" />
-    <Compile Include="NameGenerator.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -57,6 +56,7 @@
     <Compile Include="Stand.cs" />
     <Compile Include="Sugar.cs" />
     <Compile Include="Supplier.cs" />
+    <Compile Include="Weather.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
