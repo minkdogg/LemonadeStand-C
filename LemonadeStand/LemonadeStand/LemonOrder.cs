@@ -8,6 +8,10 @@ namespace LemonadeStand
 {
     public class LemonOrder : Order
     {
+        public LemonOrder(int quantity) : base(quantity)
+        {
+
+        }
         
     }
 }

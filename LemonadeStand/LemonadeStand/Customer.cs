@@ -9,7 +9,7 @@ namespace LemonadeStand
     public class Customer : IUpdate
     {
         public int buyChance;
-        public decimal weatherDemand;
+        public double weatherDemand;
         public bool buy = true;
 
         public Customer(Weather weather)
