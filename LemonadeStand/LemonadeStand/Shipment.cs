@@ -50,6 +50,10 @@ namespace LemonadeStand
             }
         }
 
+        public void update()
+        {
+            this.daysToDelivery -= 1;
+        }
         /*
         public int shipmentDelay(Inventory inventory, int daysDelayed)
         {
