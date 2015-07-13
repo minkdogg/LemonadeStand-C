@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    public class Cups
+    public class Cups : Ingredient 
     {
         protected bool punctured = false;
     }
