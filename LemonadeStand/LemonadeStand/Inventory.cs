@@ -38,13 +38,9 @@ namespace LemonadeStand
         }
 
 
-        public void add(List<Ingredient> ingredients)
+        public void add(Ingredient ingredients)
         {
-            for (int i = 0; i < ingredients.Count; i++)
-            {
-                this.ingredientList.Add(ingredients[i]);
-            }
-
+            this.ingredientList.Add(ingredients);
         }
 
 

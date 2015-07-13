@@ -34,12 +34,48 @@ namespace LemonadeStand
             // Generate Random Name
             NameGenerator nameGenerator = new NameGenerator();
             this.name = nameGenerator.GenRandomLastName();
-
+            
+            //
             // Generate Random Inventory
+            //
+            Random random = new Random();
+            // Lemons
+            int generateQuantity = random.Next(0,15);
+            for (int i = 0; i < generateQuantity; i++)
+            {
+                lemonInventory.add(new Lemon());
+            }
+            // Sugar
+            generateQuantity = random.Next(0,15);
+            for (int i = 0; i < generateQuantity; i++)
+            {
+                sugarInventory.add(new Sugar());
+            }
+            // Ice
+            generateQuantity = random.Next(0,15);
+            for (int i = 0; i < generateQuantity; i++)
+            {
+                iceInventory.add(new Ice());
+            }
+            // Cups
+            generateQuantity = random.Next(0,15);
+            for (int i = 0; i < generateQuantity; i++)
+            {
+                cupInventory.add(new Cups());
+            }
 
-            // Generate Random Price List
+
+            // Generate Random Price List ??
+            // STUB Hard Code STUB
+            this.lemonSalePrice = 1;
+            this.sugarSalePrice = 1;
+            this.iceSalePrice = 1;
+            this.cupSalePrice = 1;
+
+
 
             // Generate Random Cash on Hand
+            this.cashOnHand = random.Next(600, 1400);
 
 
         }
@@ -151,10 +187,58 @@ namespace LemonadeStand
         }
 
 
-        protected float getCashOnHand()
+        public float getCashOnHand()
         {
             return this.cashOnHand;
         }
+
+
+        //
+        // Create Shipment
+        //
+        public Shipment createShipment(LemonOrder order)
+        {
+            Shipment shipment = new Shipment();
+            for (int i=0; i < order.getQuantity(); i++)
+            {
+                shipment.AddLemons(new Lemon());
+            }
+            return shipment;
+        }
+
+        public Shipment createShipment(SugarOrder order)
+        {
+            Shipment shipment = new Shipment();
+            for (int i = 0; i < order.getQuantity(); i++)
+            {
+                shipment.AddLemons(new Sugar());
+            }
+            return shipment;
+        }
+        public Shipment createShipment(IceOrder order)
+        {
+            Shipment shipment = new Shipment();
+            for (int i = 0; i < order.getQuantity(); i++)
+            {
+                shipment.AddLemons(new Ice());
+            }
+            return shipment;
+        }
+
+        public Shipment createShipment(CupsOrder order)
+        {
+            Shipment shipment = new Shipment();
+            for (int i = 0; i < order.getQuantity(); i++)
+            {
+                shipment.AddLemons(new Cups());
+            }
+            return shipment;
+        }
+
+
+
+
+
 
     }
 }

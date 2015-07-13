@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class CupsOrder : Order
+    public class CupsOrder : Order
     {
     }
 }
