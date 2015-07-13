@@ -312,6 +312,7 @@ namespace LemonadeStand
             {
                 shipment.AddLemons(new Lemon());
             }
+            shipment.DaysToDelivery = 0;
             return shipment;
         }
 
@@ -322,6 +323,7 @@ namespace LemonadeStand
             {
                 shipment.AddLemons(new Sugar());
             }
+            shipment.DaysToDelivery = 0;
             return shipment;
         }
         public Shipment createShipment(IceOrder order)
@@ -331,6 +333,7 @@ namespace LemonadeStand
             {
                 shipment.AddLemons(new Ice());
             }
+            shipment.DaysToDelivery = 0;
             return shipment;
         }
 
@@ -341,6 +344,7 @@ namespace LemonadeStand
             {
                 shipment.AddLemons(new Cups());
             }
+            shipment.DaysToDelivery = 0;
             return shipment;
         }
 
