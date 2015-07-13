@@ -84,10 +84,10 @@ namespace LemonadeStand
             int basePrice = 1;
             int minVariance = 10;
             int maxVariance = 100;
-            this.lemonSalePrice = basePrice + (random.Next(minVariance, maxVariance)/100);
-            this.sugarSalePrice = basePrice + (random.Next(minVariance, maxVariance)/100);
-            this.iceSalePrice = basePrice + (random.Next(minVariance, maxVariance)/100);
-            this.cupSalePrice = basePrice + (random.Next(minVariance, maxVariance)/100);
+            this.lemonSalePrice = basePrice + (random.Next(minVariance, maxVariance)/100f);
+            this.sugarSalePrice = basePrice + (random.Next(minVariance, maxVariance)/100f);
+            this.iceSalePrice = basePrice + (random.Next(minVariance, maxVariance)/100f);
+            this.cupSalePrice = basePrice + (random.Next(minVariance, maxVariance)/100f);
 
             // Generate Random Cash on Hand
             int minStartingCash = 600;
