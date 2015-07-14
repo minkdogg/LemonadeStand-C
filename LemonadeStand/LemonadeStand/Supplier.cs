@@ -324,7 +324,7 @@ namespace LemonadeStand
             Shipment shipment = new Shipment();
             for (int i = 0; i < order.getQuantity(); i++)
             {
-                shipment.AddLemons(new Sugar());
+                shipment.AddSugar(new Sugar());
             }
             shipment.DaysToDelivery = 0;
             return shipment;
@@ -334,7 +334,7 @@ namespace LemonadeStand
             Shipment shipment = new Shipment();
             for (int i = 0; i < order.getQuantity(); i++)
             {
-                shipment.AddLemons(new Ice());
+                shipment.AddIce(new Ice());
             }
             shipment.DaysToDelivery = 0;
             return shipment;
@@ -345,7 +345,7 @@ namespace LemonadeStand
             Shipment shipment = new Shipment();
             for (int i = 0; i < order.getQuantity(); i++)
             {
-                shipment.AddLemons(new Cups());
+                shipment.AddCup(new Cups());
             }
             shipment.DaysToDelivery = 0;
             return shipment;

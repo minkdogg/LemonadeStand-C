@@ -8,10 +8,10 @@ namespace LemonadeStand
 {
     public class Shipment : IUpdate
     {
-        protected List<object> lemonList = new List<object>();
-        protected List<object> sugarList = new List<object>();
-        protected List<object> iceList = new List<object>();
-        protected List<object> cupList = new List<object>();
+        public List<object> lemonList = new List<object>();
+        public List<object> sugarList = new List<object>();
+        public List<object> iceList = new List<object>();
+        public List<object> cupList = new List<object>();
 
         protected int daysToDelivery;
 

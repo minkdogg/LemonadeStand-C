@@ -9,21 +9,60 @@ namespace LemonadeStand
 {
     public class Stand : IUpdate
     {
-           
+
+        public int days = 0;
         public float cash;
-        public int lemons;
-        public int ice;
-        public int sugar;
         public string location;
-        public int cups;
-        public int lemonadeCups;
-        protected Inventory lemonInventory = new Inventory();
-        protected Inventory sugarInventory = new Inventory();
-        protected Inventory iceInventory = new Inventory();
-        protected Inventory cupInventory = new Inventory();
+        protected List<Lemon> lemonList = new List<Lemon> { };
+        protected List<Sugar> sugarList = new List<Sugar> { };
+        protected List<Ice> iceList = new List<Ice>() { };
+        protected List<Cups> cupList = new List<Cups> { };
 
-        public void update(){
 
+        public void update()
+        {
+            days += 1;
+            
+            List<int> lemonListIndex = new List<int> { };
+            for (int i = 0; i< lemonList.Count(); i++)
+            {
+                lemonList[i].subtractDay();
+                if (lemonList[i].daysExpire <= 0)
+                {
+                    lemonListIndex.Add(i);
+                }
+            }
+            foreach (int index in lemonListIndex)
+            {
+                lemonList.RemoveAt(0);
+            }
+
+                foreach (Sugar sugar in sugarList)
+                {
+                    sugar.subtractDay();
+                    if (sugar.daysExpire == 0)
+                    {
+                        sugarList.Remove(sugar);
+                    }
+                }
+
+            foreach (Ice ice in iceList)
+            {
+                ice.subtractDay();
+                if (ice.daysExpire == 0)
+                {
+                    iceList.Remove(ice);
+                }
+            }
+
+            foreach (Cups cup in cupList)
+            {
+                cup.subtractDay();
+                if (cup.daysExpire == 0)
+                {
+                    cupList.Remove(cup);
+                }
+            }
 
         }
 
@@ -32,25 +71,114 @@ namespace LemonadeStand
             return cash;
         }
 
-        public void makeLemonade(int lemonade)
+        public float calculateTotal(int customers, float price)
         {
-            if (lemonade > sugar || lemonade > cups || lemonade > lemons || lemonade > ice)
+
+            int cupsAvailable = getMinimumAvailable();
+            float total;
+            
+            
+            if (customers > cupsAvailable)
             {
-                Console.WriteLine("Not enough ingredients to make lemonade");
+                
+                total = cupsAvailable * price;
+                addCash(total);
+                
             }
             else
             {
-                lemons -= lemonade;
-                cups -= lemonade;
-                sugar -= lemonade;
-                ice -= lemonade;
+                total = customers * price;
+                addCash(total);
+                int lastItem = customers - cupsAvailable;
+                int cupsSold = customers;
+            }
+
+            for (int i = 0; i < cupsAvailable; i++)
+            {
+                lemonList.RemoveAt(0);
+                sugarList.RemoveAt(0);
+                iceList.RemoveAt(0);
+                cupList.RemoveAt(0);
+            }
+
+            return total;  
+        }
+
+        public int calculateTotalSold(int customers)
+        {
+
+            int cupsAvailable = getMinimumAvailable();
+            int totalSold;
+
+
+            if (customers > cupsAvailable)
+            {
+                totalSold = cupsAvailable;
+            }
+            else
+            {
+                totalSold = customers;
+            }
+
+            return totalSold;
+        }
+
+        public int getMinimumAvailable()
+        {
+            List<int> minList = new List<int> { };
+            minList.Add(getLemonCount());
+            minList.Add(getSugarCount());
+            minList.Add(getIceCount());
+            minList.Add(getCupCount());
+
+            return minList.Min();
+        }
+
+        public void addLemonShipment(Shipment shipLemons)
+        {
+            foreach (Lemon lemon in shipLemons.lemonList)
+            {
+                lemonList.Add(lemon);
             }
         }
 
-        public void setCash(float newCash)
+        public void addSugarShipment(Shipment shipSugar)
         {
-            cash = cash + newCash;
+            foreach (Sugar sugar in shipSugar.sugarList)
+            {
+                sugarList.Add(sugar);
+            }
         }
+
+        public void addIceShipment(Shipment shipIce)
+        {
+            foreach (Ice ice in shipIce.iceList)
+            {
+                iceList.Add(ice);
+            }
+        }
+
+        public void addCupShipment(Shipment shipCup)
+        {
+            foreach (Cups cup in shipCup.cupList)
+            {
+                cupList.Add(cup);
+            }
+        }
+
+     
+        public void addCash(float newCash)
+        {
+            cash += newCash;
+        }
+
+        public void withdrawCash(float newCash)
+        {
+            cash -= newCash;
+        }
+
+
+
 
         public bool checkifZero()
         {
@@ -68,18 +196,32 @@ namespace LemonadeStand
           public Stand (string standLocation)
         {
             this.cash = 500;
-            this.lemons = 0;
-            this.sugar = 0;
-            this.ice = 0;
-            this.cups = 0;
             this.location = standLocation;
         }
 
+         public int getLemonCount()
+         {
+             int countList = lemonList.Count();
+             return countList;
+         }
 
+         public int getIceCount()
+         {
+             int countList = iceList.Count();
+             return countList;
+         }
 
+         public int getCupCount()
+         {
+             int countList = cupList.Count();
+             return countList;
+         }
 
-
-    
-}
+         public int getSugarCount()
+         {
+             int countList = sugarList.Count();
+             return countList;
+         }
+    }
     
 }

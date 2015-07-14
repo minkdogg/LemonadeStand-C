@@ -22,5 +22,11 @@ namespace LemonadeStand
                 daysExpire = value;
             }
         }
+
+        public void subtractDay()
+        {
+            daysExpire -= 1;
+        }
+
     }
 }

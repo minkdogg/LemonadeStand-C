@@ -9,5 +9,10 @@ namespace LemonadeStand
     public class Ice : Ingredient
     {
         protected bool melted = false;
+
+        public Ice():base()
+        {
+            this.daysExpire = 3; // 3 days to expire as defined by the problem description
+        }
     }
 }
