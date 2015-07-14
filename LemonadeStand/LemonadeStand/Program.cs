@@ -307,6 +307,10 @@ namespace LemonadeStand
                 
                 // Update day and display summary
                 player.stand.update();
+                foreach (Supplier supplier in supplierList)
+                {
+                    supplier.update();
+                }
                 Console.WriteLine(dayTotal);
                 Console.WriteLine(daySold);
                 Console.WriteLine("You sold " + daySold + " cups for a total of " + dayTotal + " dollars while spending " + supplyCosts + " on supplies.");
