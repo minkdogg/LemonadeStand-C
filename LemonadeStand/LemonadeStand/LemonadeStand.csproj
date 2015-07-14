@@ -46,6 +46,7 @@
     <Compile Include="CupsOrder.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="CustomerFactory.cs" />
+    <Compile Include="GeoLocator.cs" />
     <Compile Include="Ice.cs" />
     <Compile Include="IceOrder.cs" />
     <Compile Include="Ingredient.cs" />
