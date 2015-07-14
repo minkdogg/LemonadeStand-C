@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net;
 using System.Xml.Linq;
+using System.Device.Location;
 
-namespace TempWorkingProject
+namespace LemonadeStand
 {
     class GeoLocator
     {
 
-        public string getLocation(string address)
+        public GeoCoordinate getLocation(string address)
         {
             var requestUri = string.Format("http://maps.googleapis.com/maps/api/geocode/xml?address={0}&sensor=false", Uri.EscapeDataString(address));
 
@@ -23,8 +24,11 @@ namespace TempWorkingProject
             var locationElement = result.Element("geometry").Element("location");
             string lat = locationElement.Element("lat").Value;
             string lng = locationElement.Element("lng").Value;
+            GeoCoordinate location = new GeoCoordinate();
+            location.Latitude = Convert.ToDouble(lat);
+            location.Longitude = Convert.ToDouble(lng);
 
-            return lat;
+            return location;
         }
     }
 }
