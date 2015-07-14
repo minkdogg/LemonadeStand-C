@@ -26,7 +26,7 @@ namespace LemonadeStand
             int lemonChoice;
             int iceChoice;
             int sugarChoice;
-            int cupsChoice;
+            int cupChoice;
             float supplyCosts = 0;
             
             Supplier selectedSupplier = new Supplier();
@@ -34,7 +34,7 @@ namespace LemonadeStand
             var hourOfDay = timeOfDay.Hours;
             bool timeOfDayCheck;
             int beginningOfDay = 5;
-            int endOfDay = 8;
+            int endOfDay = 20;
 
 
             if (hourOfDay >= beginningOfDay && hourOfDay <= endOfDay)
@@ -108,7 +108,7 @@ namespace LemonadeStand
 
                 // Create New Weather for the day
                 Weather weather = new Weather();
-                Console.WriteLine("Forecast: The temperature outside is " + weather.Temperature + "and it is "+ weather.Precipitation);
+                Console.WriteLine("Forecast: The temperature outside is " + weather.Temperature + " and it is "+ weather.Precipitation);
                 Console.WriteLine("");
 
                 // Show Supplier prices for Supplies
@@ -190,84 +190,108 @@ namespace LemonadeStand
                         sugarCheckUser = Console.ReadLine();
                     }
                 }
-             
-                
-                
-                // Cups Purchase
+
+
+                //Cup Purchase
                 Console.WriteLine("How many cups would you like?<cash on hand: " + player.stand.getCash() + ">");
                 float supplierCupPrice = selectedSupplier.getCupPrice();
-                cupsChoice = Convert.ToInt32(Console.ReadLine());
-                bool cupsCheck = true;
-                while (cupsCheck == true)
-                    
+                string cupCheckUser = Console.ReadLine();
+                bool cupCheck = true;
+                while (cupCheck == true)
                 {
-                    float cupCost = supplierCupPrice * cupsChoice;
-                    if (cupsChoice >= 0 && cupCost <= player.stand.getCash())
+                    if (Int32.TryParse(cupCheckUser, out cupChoice))
                     {
-                        CupsOrder cups = new CupsOrder(Convert.ToInt32(cupsChoice));
-                        Shipment cupsShipment = selectedSupplier.createShipment(cups);
-                        player.stand.addCupShipment(cupsShipment);
-                        player.stand.withdrawCash(cupCost);
-                        cupsCheck = false;
-                        
+                        float cupCost = supplierCupPrice * cupChoice;
+                        if (cupChoice >= 0 && cupCost <= player.stand.getCash())
+                        {
+                            CupsOrder cups = new CupsOrder(Convert.ToInt32(cupChoice));
+                            Shipment cupShipment = selectedSupplier.createShipment(cups);
+                            player.stand.addCupShipment(cupShipment);
+                            player.stand.withdrawCash(cupCost);
+                            supplyCosts += cupCost;
+                            cupCheck = false;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Incorrect Amount. How many cups would you like?<cash on hand: " + player.stand.getCash() + ">");
+                            cupCheckUser = Console.ReadLine();
+                        }
                     }
                     else
                     {
-                        Console.WriteLine("Incorrect Amount. How many cups would you like?<cash on hand: " + player.stand.getCash() + ">");
-                        cupsChoice = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Invalid number entered. Please enter number in format: #.##");
+                        Console.WriteLine("How many cups would you like?<cash on hand: " + player.stand.getCash() + ">");
+                        cupCheckUser = Console.ReadLine();
                     }
-                    supplyCosts += cupCost;
                 }
 
-                // Lemons Purchase
+                //Lemon Purchase
                 Console.WriteLine("How many lemons would you like?<cash on hand: " + player.stand.getCash() + ">");
                 float supplierLemonPrice = selectedSupplier.getLemonPrice();
-                lemonChoice = Convert.ToInt32(Console.ReadLine());
+                string lemonCheckUser = Console.ReadLine();
                 bool lemonCheck = true;
                 while (lemonCheck == true)
                 {
-                    float lemonCost = supplierLemonPrice * lemonChoice;
-                    if (lemonChoice >= 0 && lemonCost <= player.stand.getCash())
+                    if (Int32.TryParse(lemonCheckUser, out lemonChoice))
                     {
-                        LemonOrder lemon = new LemonOrder(Convert.ToInt32(lemonChoice));
-                        Shipment lemonShipment = selectedSupplier.createShipment(lemon);
-                        player.stand.addLemonShipment(lemonShipment);
-                        player.stand.withdrawCash(lemonCost);
-                        lemonCheck = false;
-                        
+                        float lemonCost = supplierLemonPrice * lemonChoice;
+                        if (lemonChoice >= 0 && lemonCost <= player.stand.getCash())
+                        {
+                            LemonOrder lemons = new LemonOrder(Convert.ToInt32(lemonChoice));
+                            Shipment lemonShipment = selectedSupplier.createShipment(lemons);
+                            player.stand.addLemonShipment(lemonShipment);
+                            player.stand.withdrawCash(lemonCost);
+                            supplyCosts += lemonCost;
+                            lemonCheck = false;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Incorrect Amount. How many lemons would you like?<cash on hand: " + player.stand.getCash() + ">");
+                            lemonCheckUser = Console.ReadLine();
+                        }
                     }
                     else
                     {
-                        Console.WriteLine("Incorrect Amount. How many lemons would you like?<cash on hand: " + player.stand.getCash() + ">");
-                        lemonChoice = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Invalid number entered. Please enter number in format: #.##");
+                        Console.WriteLine("How many lemons would you like?<cash on hand: " + player.stand.getCash() + ">");
+                        lemonCheckUser = Console.ReadLine();
                     }
-                    supplyCosts += lemonCost;
                 }
 
-                // Ice Purchase
+                //Ice Purchase
                 Console.WriteLine("How much ice would you like?<cash on hand: " + player.stand.getCash() + ">");
                 float supplierIcePrice = selectedSupplier.getIcePrice();
-                iceChoice = Convert.ToInt32(Console.ReadLine());
+                string iceCheckUser = Console.ReadLine();
                 bool iceCheck = true;
                 while (iceCheck == true)
                 {
-                    float iceCost = supplierIcePrice * iceChoice;
-                    if (iceChoice >= 0 && iceCost <= player.stand.getCash())
+                    if (Int32.TryParse(iceCheckUser, out iceChoice))
                     {
-                        IceOrder ice = new IceOrder(Convert.ToInt32(iceChoice));
-                        Shipment iceShipment = selectedSupplier.createShipment(ice);
-                        player.stand.addIceShipment(iceShipment);
-                        player.stand.withdrawCash(iceCost);
-                        iceCheck = false;
-                        
+                        float iceCost = supplierIcePrice * iceChoice;
+                        if (iceChoice >= 0 && iceCost <= player.stand.getCash())
+                        {
+                            IceOrder ice = new IceOrder(Convert.ToInt32(iceChoice));
+                            Shipment iceShipment = selectedSupplier.createShipment(ice);
+                            player.stand.addIceShipment(iceShipment);
+                            player.stand.withdrawCash(iceCost);
+                            supplyCosts += iceCost;
+                            iceCheck = false;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Incorrect Amount. How much ice would you like?<cash on hand: " + player.stand.getCash() + ">");
+                            iceCheckUser = Console.ReadLine();
+                        }
                     }
                     else
                     {
-                        Console.WriteLine("Incorrect Amount. How much Ice would you like?<cash on hand: " + player.stand.getCash() + ">");
-                        iceChoice = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Invalid number entered. Please enter number in format: #.##");
+                        Console.WriteLine("How much ice would you like?<cash on hand: " + player.stand.getCash() + ">");
+                        iceCheckUser = Console.ReadLine();
                     }
-                    supplyCosts += iceCost;
                 }
+                
+
                 
                               
                 //Create Lemonade Price
@@ -290,7 +314,7 @@ namespace LemonadeStand
                     customerList.Add(customer);
                 }
 
-                customerSelling = customerBuyList.Count();
+                
                 foreach(Customer customer in customerList)
                 {
                     var customerBuy = new Random();
@@ -301,6 +325,7 @@ namespace LemonadeStand
                     }
                 }
                 int minAllowed = player.stand.getMinimumAvailable();
+                customerSelling = customerBuyList.Count();
 
                 Console.WriteLine("How many cups of lemonade would you like to make? <" + minAllowed + "> Max");
                 quantityCups = Convert.ToInt32(Console.ReadLine());
