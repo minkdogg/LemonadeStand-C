@@ -296,7 +296,25 @@ namespace LemonadeStand
                               
                 //Create Lemonade Price
                 Console.WriteLine("What price would you like to sell your lemonade?");
-                price = Convert.ToSingle(Console.ReadLine());
+                string priceString = Console.ReadLine();
+                bool priceCheck = true;
+                float floatPrice;
+                while (priceCheck == true)
+                {
+                    if (Single.TryParse(priceString, out floatPrice))
+                    {
+                        priceCheck = false;
+                        price = Convert.ToSingle(priceString);
+                    }
+                    else
+                    {
+                        
+                        Console.WriteLine("What price would you like to sell your lemonade?");
+                        priceString = Console.ReadLine();
+                    }
+                }
+                price = Convert.ToSingle(priceString);
+               
 
                 //Create Customers and whether they buy
                 var customerNumber = new Random();
@@ -345,8 +363,7 @@ namespace LemonadeStand
                 {
                     supplier.update();
                 }
-                Console.WriteLine(dayTotal);
-                Console.WriteLine(daySold);
+                
                 Console.WriteLine("You sold " + daySold + " cups for a total of " + dayTotal + " dollars while spending " + supplyCosts + " on supplies.");
                 Console.WriteLine("You have " + player.stand.getCash() + " remaining.");
                 Console.ReadLine();
