@@ -12,36 +12,60 @@ namespace LemonadeStand
         public double weatherDemand;
         public bool buy = true;
 
-        public Customer(Weather weather, float price)
+        public int levelOneBuyPrice = 1;
+        public int levelOneBuyChance = 100;
+
+        public int levelTwoBuyPrice = 3;
+        public int levelTwoBuyChance = 90;
+
+        public int levelThreeBuyPrice = 6;
+        public int levelThreeBuyChance = 50;
+
+        public int levelFourBuyPrice = 10;
+        public int levelFourBuyChance = 5;
+
+        public int levelFiveBuyPrice = 20;
+        public int levelFiveBuyChance = 0;
+
+        public int defaultBuyChance = 0;
+
+        public int guaranteedBuy = 100;
+
+        public Customer(Weather weather, float price, Player player, Stand stand)
         {
-            this.weatherDemand = weather.DemandLevel;
-            if (price <= 1)
+            if (player.PlayerName != "Tad from Prep School" && stand.location != "The Hamptons")
             {
-                buyChance = (100);
-            }
-            else if(price <= 3)
-            {
-                buyChance = (90);
-            }
+                this.weatherDemand = weather.DemandLevel;
+                if (price <= levelOneBuyPrice)
+                {
+                    buyChance = (levelOneBuyChance);
+                }
+                else if (price <= levelTwoBuyPrice)
+                {
+                    buyChance = (levelTwoBuyChance);
+                }
+                else if (price <= levelThreeBuyPrice)
+                {
+                    buyChance = (levelThreeBuyChance);
+                }
+                else if (price <= levelFourBuyPrice)
+                {
+                    buyChance = (levelFourBuyChance);
+                }
 
-            else if (price <= 6)
-            {
-                buyChance = (50);
-            }
-            else if (price <= 10)
-            {
-                buyChance = (5);
-            }
-
-            else if (price <= 20)
-            {
-                buyChance = (0);
+                else if (price <= levelFiveBuyPrice)
+                {
+                    buyChance = (levelFiveBuyChance);
+                }
+                else
+                {
+                    buyChance = (defaultBuyChance);
+                }
             }
             else
             {
-                buyChance = (0);
+                buyChance = guaranteedBuy;
             }
-            
         }
 
         public int BuyChance

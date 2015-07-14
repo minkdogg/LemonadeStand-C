@@ -328,7 +328,7 @@ namespace LemonadeStand
                 int customerInt = customerNumber.Next(0, customerFloorInt);
                 for (int i = 0; i < customerInt; i++)
                 {
-                    Customer customer = new Customer(weather,price);
+                    Customer customer = new Customer(weather,price,player,player.stand);
                     customerList.Add(customer);
                 }
 
