@@ -820,6 +820,45 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="2e932115-c17a-4236-8265-df15a9899390"
+            isDerived="false"
+            sourceEndRoleName="Order"
+            targetEndRoleName="Supplier"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="e3ef999f-43be-43f6-9b78-bd50ff5f5fc0"
+              LastKnownName="Supplier"
+              LastKnownLocation="Package_1651.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d13e7744-2e10-498a-a4fb-5ffe13cb0bd9"
+                  name="Order"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1c40bd5a-fb65-443a-91a0-71955aff68ac"
+                  name="Supplier"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
         <ownedAttributesInternal>
           <property
@@ -10431,6 +10470,230 @@
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="43c6b2a4-67e1-4c34-b6a6-031df2be6d6c"
+        name="GeoLocator"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="6629a3a1-6f87-4342-9121-bdbbe04d9c2c"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fmrunkle_he%2FDropbox%2FVisual Studio%2FLemonadeStand-C%2FLemonadeStand%2FLemonadeStand%2Fbin%2FDebug%2FLemonadeStand.exe&quot; Namespace%3DLemonadeStand Type%3DGeoLocator"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="aedb1fc5-c2d6-473a-913b-f41a15fab043"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d68b151b-76bb-40a1-91a7-47f28bc94975">
+                <propertyInstance
+                  Id="f7a66c29-7872-4ea4-bc34-ef7fda5a74da"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="451c3f8a-2654-47c6-a2ae-044c936e6446">
+                <propertyInstance
+                  Id="0a9c87f3-a449-40d4-8483-4fab75cde817"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f07fa4ad-d6ce-4214-aa87-22fa4a5e3059">
+                <propertyInstance
+                  Id="addd400a-3bb7-40a3-8392-40483233514e"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9489eacb-9a32-4dae-b92b-94dfaf7f8716">
+                <propertyInstance
+                  Id="b26db037-5c1c-4eec-a6cb-8b546018c582"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3a4c1468-1cd1-43cb-9fa0-bdfbdedeb798">
+                <propertyInstance
+                  Id="259374ca-7efb-4fde-8042-ba26f03db0de"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="fa4afef5-b98d-43b4-acad-692df4ad3d95"
+            name="getLocation"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="fa1d7f9b-8117-4f1c-af97-530f9c323862"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fmrunkle_he%2FDropbox%2FVisual Studio%2FLemonadeStand-C%2FLemonadeStand%2FLemonadeStand%2Fbin%2FDebug%2FLemonadeStand.exe&quot; Namespace%3DLemonadeStand Type%3DGeoLocator Member%3D(Name%3DgetLocation OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="feaaad65-7a00-4a54-a387-156895157f60"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="91fd63f1-df8b-4957-be73-1c053ad57f89">
+                    <propertyInstance
+                      Id="067d4c29-adec-4e0b-9ff0-3ee4e18ee6f8"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0ed15750-c32c-4b66-83e1-3f2465954a65">
+                    <propertyInstance
+                      Id="c81bd7ca-5637-47a8-bc8a-ad3ef3b3fb96"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="df9cc0ab-ad86-4bd9-bd8e-87462c662052">
+                    <propertyInstance
+                      Id="507f74ac-fc5c-4396-a2a5-436f441893d1"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a6c3ee54-2536-4417-8307-60792c95e0a8">
+                    <propertyInstance
+                      Id="9fbbbfc6-8c88-42ce-a6f7-4629d931c94c"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e29d373f-9a4a-46d9-ac2e-9ab8a934402f">
+                    <propertyInstance
+                      Id="950cc54b-3e7a-4b8b-843c-08dbc7966522"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="959cb355-5e67-49a7-a052-b639b52cbabb">
+                    <propertyInstance
+                      Id="8788c4d0-b1b0-47a5-996f-eeb205c899f8"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="fdfb5bc1-c7f0-414b-b7cb-7ad55da96c68"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="9f99d9e2-d755-4265-8367-c3cbbef657b1"
+                      LastKnownName="GeoCoordinate"
+                      LastKnownLocation="Package1_1652.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="fe5c799a-1d0a-4dd3-9818-91e44c3ea02d"
+                  name="address"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="9e1c8da3-12f4-4ce2-b7d3-c501e54d9a64"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fmrunkle_he%2FDropbox%2FVisual Studio%2FLemonadeStand-C%2FLemonadeStand%2FLemonadeStand%2Fbin%2FDebug%2FLemonadeStand.exe&quot; Namespace%3DLemonadeStand Type%3DGeoLocator Member%3D(Name%3DgetLocation OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Daddress"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="LemonadeStand_UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="497f20e3-ebbb-4f61-99bb-5c35e9e15a74"
+            name="GeoLocator"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="301e4d2f-bc91-4f91-85e4-bc637ffa7bfd"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fmrunkle_he%2FDropbox%2FVisual Studio%2FLemonadeStand-C%2FLemonadeStand%2FLemonadeStand%2Fbin%2FDebug%2FLemonadeStand.exe&quot; Namespace%3DLemonadeStand Type%3DGeoLocator Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="8e4c4789-9d5d-4bf7-8256-d7e4a3277b26"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b9a21b7a-a17d-4430-9c92-4b7100dc858f">
+                    <propertyInstance
+                      Id="2eed5fbc-f764-42e0-b45c-e2b2ff3ecdd9"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="92c09bad-c599-4c5a-ad57-0ee32a8fec68">
+                    <propertyInstance
+                      Id="95aa4a05-edc6-4238-95ed-07e2f4da0681"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7d88a5d0-164f-4f51-9d62-f9d4f3cd25ca">
+                    <propertyInstance
+                      Id="cdd757d2-9b61-495c-8af2-6142a0449bdb"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1bad0106-cc06-42db-a555-7a8391cffaf7">
+                    <propertyInstance
+                      Id="1532aa25-32c9-48b4-8563-e74a0779d668"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="95bc4bcb-1c03-4ff9-a6fd-bcec346ed651">
+                    <propertyInstance
+                      Id="972cd34e-3065-4004-b265-5fc5723ded67"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c617f6f1-b07a-441b-b715-9530c4d175f4">
+                    <propertyInstance
+                      Id="5f1c1d53-510e-487e-ae26-c23981881fb6"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
           </operation>
         </ownedOperationsInternal>
       </class>

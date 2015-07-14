@@ -1,25 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="e028c19d-9736-428a-a5bd-f6e7f36efcdc" name="LemonadeStand_UML" linkedPackageId="e2a816f3-b19b-48b8-84f6-8a92a010deef" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="4da5951f-d46e-480f-ad04-f3fafeb1b0e0">
-      <profileInstance Id="06678afe-0941-4b0c-b000-bc2a61f729bd" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="04d26504-7d21-45a1-afd7-bef7b43b4b57">
-      <profileInstance Id="47603c38-f16a-45ec-ad83-3da1961413a2" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="141e60cc-7218-4b09-81ea-7202d9a5a9ae">
-      <profileInstance Id="a87555e2-22e2-4543-aa31-d6f305b52d4c" name="CSharpProfile">
-        <elementDefinition Id="cd24e3ce-c944-4d7f-9346-331782422911" />
-      </profileInstance>
-      <elementDefinition Id="10682b0d-9982-44a9-be76-d805e2c02303" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="0627ba3c-841e-4601-89c1-6cd34f0fa035" name="Cups" isAbstract="false" isLeaf="false" isActiveClass="false">
@@ -2466,6 +2446,22 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="8e6bc335-08a3-4997-ad0d-63d2f4e01ff2" />
+          </association>
+          <association Id="72ae3170-022c-4564-b338-cafc77292144" isDerived="false" sourceEndRoleName="Order" targetEndRoleName="Supplier" isLeaf="false" isAbstract="false">
+            <classMoniker Id="7e73c3ee-30fd-468b-8dfa-e9c0697acaea" LastKnownName="Supplier" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e0521ee6-e059-46e8-a0fd-973fa2563381" name="Order" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="d13e7744-2e10-498a-a4fb-5ffe13cb0bd9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="01886a9c-dfbd-42c3-b98a-2d010b37b295" name="Supplier" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="1c40bd5a-fb65-443a-91a0-71955aff68ac" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="2e932115-c17a-4236-8265-df15a9899390" />
           </association>
         </targetEnds>
         <ownedAttributesInternal>
@@ -7692,8 +7688,202 @@
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d787731e-8c61-40b0-978d-1bdbe2f30ed8" name="GeoLocator" visibility="Package" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <referencesInternal>
+          <reference Id="961e8a3f-4e96-4e69-9d0f-8dee1a9df34c" handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fmrunkle_he%2FDropbox%2FVisual Studio%2FLemonadeStand-C%2FLemonadeStand%2FLemonadeStand%2Fbin%2FDebug%2FLemonadeStand.exe&quot; Namespace%3DLemonadeStand Type%3DGeoLocator" tag="ViewCode">
+            <elementDefinition Id="6629a3a1-6f87-4342-9121-bdbbe04d9c2c" />
+          </reference>
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance Id="39c6a229-fff6-47c9-87ed-d1019b567d38" name="class" profile="CSharpProfile">
+            <elementDefinition Id="aedb1fc5-c2d6-473a-913b-f41a15fab043" />
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="9483ee22-7373-4b26-8f03-5ae79e63472c">
+                <propertyInstance Id="01bd3026-2bcc-4acc-a017-2e07c4cb739d" name="ClrAttributes">
+                  <elementDefinition Id="f7a66c29-7872-4ea4-bc34-ef7fda5a74da" />
+                </propertyInstance>
+                <elementDefinition Id="d68b151b-76bb-40a1-91a7-47f28bc94975" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="3680569d-a8f4-4565-bc37-a25c1103c885">
+                <propertyInstance Id="4e31871c-8de0-4ae6-b615-8e44e4baa400" name="IsPartial" value="false">
+                  <elementDefinition Id="0a9c87f3-a449-40d4-8483-4fab75cde817" />
+                </propertyInstance>
+                <elementDefinition Id="451c3f8a-2654-47c6-a2ae-044c936e6446" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="05c61e46-8283-4473-92e6-c77df434f2e3">
+                <propertyInstance Id="51eefb04-cf65-444b-9189-72ba43ab3f8a" name="IsStatic" value="False">
+                  <elementDefinition Id="addd400a-3bb7-40a3-8392-40483233514e" />
+                </propertyInstance>
+                <elementDefinition Id="f07fa4ad-d6ce-4214-aa87-22fa4a5e3059" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="87a77552-18c3-4aca-8a5a-50b5ef0d9706">
+                <propertyInstance Id="b69ba212-b1ce-418e-915b-3cc735dbf2aa" name="IsUnsafe" value="false">
+                  <elementDefinition Id="b26db037-5c1c-4eec-a6cb-8b546018c582" />
+                </propertyInstance>
+                <elementDefinition Id="9489eacb-9a32-4dae-b92b-94dfaf7f8716" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="46b4ae33-f354-43f2-9a3e-cfe1e41e1a21">
+                <propertyInstance Id="977b7084-888d-4f86-8e05-38818613bd23" name="PackageVisibility" value="internal">
+                  <elementDefinition Id="259374ca-7efb-4fde-8042-ba26f03db0de" />
+                </propertyInstance>
+                <elementDefinition Id="3a4c1468-1cd1-43cb-9fa0-bdfbdedeb798" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <elementDefinition Id="43c6b2a4-67e1-4c34-b6a6-031df2be6d6c" />
+        <ownedOperationsInternal>
+          <operation Id="0abbbbac-f137-4965-853c-ae82c014beef" name="getLocation" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="b3fcb56f-a525-4438-9717-d604b78be16e" handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fmrunkle_he%2FDropbox%2FVisual Studio%2FLemonadeStand-C%2FLemonadeStand%2FLemonadeStand%2Fbin%2FDebug%2FLemonadeStand.exe&quot; Namespace%3DLemonadeStand Type%3DGeoLocator Member%3D(Name%3DgetLocation OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])" tag="ViewCode">
+                <elementDefinition Id="fa1d7f9b-8117-4f1c-af97-530f9c323862" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="847e7a72-579e-42d6-90e9-02f930237887" name="method" profile="CSharpProfile">
+                <elementDefinition Id="feaaad65-7a00-4a54-a387-156895157f60" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="e572b31e-1696-42c6-ab67-cbe49cb86258">
+                    <propertyInstance Id="01c40146-e506-4a5f-9b26-2172f3bfe468" name="ClrAttributes">
+                      <elementDefinition Id="067d4c29-adec-4e0b-9ff0-3ee4e18ee6f8" />
+                    </propertyInstance>
+                    <elementDefinition Id="91fd63f1-df8b-4957-be73-1c053ad57f89" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="b0f924ea-d2dd-4c38-9e7c-fdac0cd43317">
+                    <propertyInstance Id="cfa85f81-e27f-4dd7-a77e-9297c65a2042" name="IsPartial" value="false">
+                      <elementDefinition Id="c81bd7ca-5637-47a8-bc8a-ad3ef3b3fb96" />
+                    </propertyInstance>
+                    <elementDefinition Id="0ed15750-c32c-4b66-83e1-3f2465954a65" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="baf0d55d-b701-43c7-aba5-0aecd9e21aae">
+                    <propertyInstance Id="cbdc0c7c-275b-4889-9cee-57327b5b8326" name="IsUnsafe" value="false">
+                      <elementDefinition Id="507f74ac-fc5c-4396-a2a5-436f441893d1" />
+                    </propertyInstance>
+                    <elementDefinition Id="df9cc0ab-ad86-4bd9-bd8e-87462c662052" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="eab7610f-03f3-46f5-ac53-771c7014b94f">
+                    <propertyInstance Id="67af3417-4466-490f-aecd-9be9b06f4be6" name="Inheritance" value="none">
+                      <elementDefinition Id="9fbbbfc6-8c88-42ce-a6f7-4629d931c94c" />
+                    </propertyInstance>
+                    <elementDefinition Id="a6c3ee54-2536-4417-8307-60792c95e0a8" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="9f0250b3-9bd0-4b3c-aa18-17f21b94d588">
+                    <propertyInstance Id="274d1002-a4a6-4705-852f-628e10484518" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="950cc54b-3e7a-4b8b-843c-08dbc7966522" />
+                    </propertyInstance>
+                    <elementDefinition Id="e29d373f-9a4a-46d9-ac2e-9ab8a934402f" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="cf506d13-5f89-4eda-a345-984e182adc00">
+                    <propertyInstance Id="bf52a775-b825-4f8a-a1ec-b1ff729df93c" name="params" value="false">
+                      <elementDefinition Id="8788c4d0-b1b0-47a5-996f-eeb205c899f8" />
+                    </propertyInstance>
+                    <elementDefinition Id="959cb355-5e67-49a7-a052-b639b52cbabb" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="fa4afef5-b98d-43b4-acad-692df4ad3d95" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b017aa33-40a1-4d89-bbee-2bb5aae5c372" direction="Return">
+                  <elementDefinition Id="fdfb5bc1-c7f0-414b-b7cb-7ad55da96c68" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f766052a-dbc3-4195-bc1a-d95db2bdbaa2" LastKnownName="GeoCoordinate" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="65adab30-2aae-435a-9bf6-01ae0ca7f618" name="address" direction="In">
+                  <referencesInternal>
+                    <reference Id="8b7cd90d-a9a9-4e50-89a5-2458a2fada79" handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fmrunkle_he%2FDropbox%2FVisual Studio%2FLemonadeStand-C%2FLemonadeStand%2FLemonadeStand%2Fbin%2FDebug%2FLemonadeStand.exe&quot; Namespace%3DLemonadeStand Type%3DGeoLocator Member%3D(Name%3DgetLocation OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Daddress" tag="ViewCode">
+                      <elementDefinition Id="9e1c8da3-12f4-4ce2-b7d3-c501e54d9a64" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="fe5c799a-1d0a-4dd3-9818-91e44c3ea02d" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="23e85795-1882-4c06-b2b3-056f77921851" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="34c93ed2-b687-43a3-85eb-ac70e1508d12" name="GeoLocator" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="95437713-2137-4d81-88d8-650be4ecef2f" handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fmrunkle_he%2FDropbox%2FVisual Studio%2FLemonadeStand-C%2FLemonadeStand%2FLemonadeStand%2Fbin%2FDebug%2FLemonadeStand.exe&quot; Namespace%3DLemonadeStand Type%3DGeoLocator Member%3D.ctor" tag="ViewCode">
+                <elementDefinition Id="301e4d2f-bc91-4f91-85e4-bc637ffa7bfd" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="ea075281-55ac-4bb1-a8c7-cf301f9242bd" name="method" profile="CSharpProfile">
+                <elementDefinition Id="8e4c4789-9d5d-4bf7-8256-d7e4a3277b26" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="0113a23a-4d97-4745-a597-318444795e6d">
+                    <propertyInstance Id="85df901b-563f-4bb6-9248-a01a6ec92c3f" name="ClrAttributes">
+                      <elementDefinition Id="2eed5fbc-f764-42e0-b45c-e2b2ff3ecdd9" />
+                    </propertyInstance>
+                    <elementDefinition Id="b9a21b7a-a17d-4430-9c92-4b7100dc858f" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="4c51a024-8e3e-40d7-9d4e-cb2d2de233be">
+                    <propertyInstance Id="1af2920f-c4d6-44a3-8bc9-9445ca83253e" name="IsPartial" value="false">
+                      <elementDefinition Id="95aa4a05-edc6-4238-95ed-07e2f4da0681" />
+                    </propertyInstance>
+                    <elementDefinition Id="92c09bad-c599-4c5a-ad57-0ee32a8fec68" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="9b78e45a-b0da-4c2b-b399-25c12a8ad6c5">
+                    <propertyInstance Id="6a611ee0-708d-42ba-acd6-03acdc71c2a4" name="IsUnsafe" value="false">
+                      <elementDefinition Id="cdd757d2-9b61-495c-8af2-6142a0449bdb" />
+                    </propertyInstance>
+                    <elementDefinition Id="7d88a5d0-164f-4f51-9d62-f9d4f3cd25ca" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="2016ed09-188c-4634-8406-e0c7eb16435f">
+                    <propertyInstance Id="4ea0ef65-6dd6-49f5-9187-f01bd93913a9" name="Inheritance" value="none">
+                      <elementDefinition Id="1532aa25-32c9-48b4-8563-e74a0779d668" />
+                    </propertyInstance>
+                    <elementDefinition Id="1bad0106-cc06-42db-a555-7a8391cffaf7" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="78840729-ec3f-4a8b-8e0f-ef48e6c4acbb">
+                    <propertyInstance Id="cbb4eca1-f32d-4dd7-a760-180ff057f719" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="972cd34e-3065-4004-b265-5fc5723ded67" />
+                    </propertyInstance>
+                    <elementDefinition Id="95bc4bcb-1c03-4ff9-a6fd-bcec346ed651" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="d53a4be8-c428-49f5-85a0-f4d8eb4ffe79">
+                    <propertyInstance Id="30bf1ba6-d606-4daf-934e-a50eff21c4f3" name="params" value="false">
+                      <elementDefinition Id="5f1c1d53-510e-487e-ae26-c23981881fb6" />
+                    </propertyInstance>
+                    <elementDefinition Id="c617f6f1-b07a-441b-b715-9530c4d175f4" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="497f20e3-ebbb-4f61-99bb-5c35e9e15a74" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
   </packagedElements>
   <package Id="e2a816f3-b19b-48b8-84f6-8a92a010deef" name="LemonadeStand_UML">
     <elementDefinition Id="3e171adb-5cbb-403f-87e1-cfe1574ecf2b" />
+    <profileInstances>
+      <packageHasProfileInstances Id="4da5951f-d46e-480f-ad04-f3fafeb1b0e0">
+        <profileInstance Id="06678afe-0941-4b0c-b000-bc2a61f729bd" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="04d26504-7d21-45a1-afd7-bef7b43b4b57">
+        <profileInstance Id="47603c38-f16a-45ec-ad83-3da1961413a2" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="141e60cc-7218-4b09-81ea-7202d9a5a9ae">
+        <profileInstance Id="a87555e2-22e2-4543-aa31-d6f305b52d4c" name="CSharpProfile">
+          <elementDefinition Id="cd24e3ce-c944-4d7f-9346-331782422911" />
+        </profileInstance>
+        <elementDefinition Id="10682b0d-9982-44a9-be76-d805e2c02303" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>
