@@ -17,29 +17,29 @@ namespace LemonadeStand
             this.weatherDemand = weather.DemandLevel;
             if (price <= 1)
             {
-                buyChance = (1);
+                buyChance = (100);
             }
             else if(price <= 3)
             {
-                buyChance = (90 / 100);
+                buyChance = (90);
             }
 
             else if (price <= 6)
             {
-                buyChance = (50 / 100);
+                buyChance = (50);
             }
             else if (price <= 10)
             {
-                buyChance = (25 / 100);
+                buyChance = (5);
             }
 
             else if (price <= 20)
             {
-                buyChance = (5 / 100);
+                buyChance = (0);
             }
             else
             {
-                buyChance = (1 / 100);
+                buyChance = (0);
             }
             
         }

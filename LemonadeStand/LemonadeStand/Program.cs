@@ -108,7 +108,7 @@ namespace LemonadeStand
 
                 // Create New Weather for the day
                 Weather weather = new Weather();
-                Console.WriteLine("Forecast: The temperature outside is " + weather.Temperature);
+                Console.WriteLine("Forecast: The temperature outside is " + weather.Temperature + "and it is "+ weather.Precipitation);
                 Console.WriteLine("");
 
                 // Show Supplier prices for Supplies
@@ -290,7 +290,16 @@ namespace LemonadeStand
                     customerList.Add(customer);
                 }
 
-                customerSelling = customerList.Count();
+                customerSelling = customerBuyList.Count();
+                foreach(Customer customer in customerList)
+                {
+                    var customerBuy = new Random();
+                    var customerToBuy = customerBuy.Next(0, 100);
+                    if(customer.buyChance > customerToBuy)
+                    {
+                        customerBuyList.Add(customer);
+                    }
+                }
                 int minAllowed = player.stand.getMinimumAvailable();
 
                 Console.WriteLine("How many cups of lemonade would you like to make? <" + minAllowed + "> Max");
