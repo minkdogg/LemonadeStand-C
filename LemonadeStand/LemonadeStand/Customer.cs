@@ -12,19 +12,19 @@ namespace LemonadeStand
         public double weatherDemand;
         public bool buy = true;
 
-        public int levelOneBuyPrice = 1;
+        public int levelOneBuyPrice = 2;
         public int levelOneBuyChance = 100;
 
-        public int levelTwoBuyPrice = 3;
+        public int levelTwoBuyPrice = 6;
         public int levelTwoBuyChance = 90;
 
-        public int levelThreeBuyPrice = 6;
+        public int levelThreeBuyPrice = 12;
         public int levelThreeBuyChance = 50;
 
-        public int levelFourBuyPrice = 10;
+        public int levelFourBuyPrice = 20;
         public int levelFourBuyChance = 5;
 
-        public int levelFiveBuyPrice = 20;
+        public int levelFiveBuyPrice = 40;
         public int levelFiveBuyChance = 0;
 
         public int defaultBuyChance = 0;
