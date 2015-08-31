@@ -346,7 +346,9 @@ namespace LemonadeStand
                 customerSelling = customerBuyList.Count();
 
                 Console.WriteLine("How many cups of lemonade would you like to make? <" + minAllowed + "> Max");
-                quantityCups = Convert.ToInt32(Console.ReadLine());
+                string quantityStringCups = Console.ReadLine();
+
+                quantityCups = Convert.ToInt32(quantityStringCups);
                 while (quantityCups > minAllowed)
                 {
                     Console.WriteLine("Can't make requested amount, please enter new amount.");
