@@ -34,6 +34,7 @@ namespace LemonadeStand
             var hourOfDay = timeOfDay.Hours;
             bool timeOfDayCheck;
             int beginningOfDay = 5;
+
             int endOfDay = 20;
 
 
